@@ -1,5 +1,6 @@
 from dstplus.bitset import BitSet
 
+
 def test_add():
     bset = BitSet()
     assert 0 not in bset

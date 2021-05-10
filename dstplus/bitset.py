@@ -12,4 +12,3 @@ class BitSet:
 
     def __contains__(self, value):
         return (self._flags & (1 << value)) != 0
-
