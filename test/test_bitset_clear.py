@@ -18,7 +18,6 @@ def test_clear():
     assert 34 not in bset
 
 
-
 def test_clear_double():
     bset = BitSet()
     bset.add(0)
