@@ -26,12 +26,16 @@ class BitSet:
         """
         Adds element to set
         """
+        if value not in self:
+            self._size += 1
         self._flags |= (1 << value)
 
     def remove(self, value):
         """
         Removes element from set
         """
+        if value in self:
+            self._size -= 1
         self._flags &= ~(1 << value)
 
     def clear(self):
@@ -39,6 +43,10 @@ class BitSet:
         Removes all elements from set
         """
         self._flags = 0
+        self._size = 0
 
     def __contains__(self, value):
         return (self._flags & (1 << value)) != 0
+
+    def __len__(self):
+        return self._size
