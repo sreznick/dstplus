@@ -46,7 +46,8 @@ def test_random():
     random.seed(32)
     add = 0
     remove = 1
-    opvals = [(random.sample((add, remove), 1)[0], random.randrange(100)) for _ in range(1000)]
+    opvals = [(random.sample((add, remove), 1)[0], random.randrange(100))
+              for _ in range(1000)]
     s_py = set()
     s_bitset = BitSet()
     for op, value in opvals:
