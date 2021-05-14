@@ -45,8 +45,31 @@ class BitSet:
         self._flags = 0
         self._size = 0
 
+    def union(self, other):
+        """
+        Adds all elements of other set to this one
+        """
+        result = BitSet()
+        result._flags = self._flags | other._flags
+        result._size = num_of_bits(result._flags)
+        return result
+
+    def __or__(self, other):
+        return self.union(other)
+
     def __contains__(self, value):
         return (self._flags & (1 << value)) != 0
 
     def __len__(self):
         return self._size
+
+
+def num_of_bits(value):   
+    # very naive implementation
+    # to be enhanced
+    print("bits", value)
+    result = 0
+    while value:
+        result += value & 1
+        value >>= 1
+    return result
