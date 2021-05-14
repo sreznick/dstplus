@@ -64,7 +64,7 @@ class BitSet:
         return self._size
 
 
-def num_of_bits(value):   
+def num_of_bits(value):
     # very naive implementation
     # to be enhanced
     print("bits", value)

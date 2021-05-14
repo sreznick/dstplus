@@ -80,4 +80,3 @@ def test_diff():
     assert 3 in bset
     assert 2 in bset
     assert len(bset) == 3
-    
